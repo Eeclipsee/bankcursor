@@ -3,22 +3,33 @@ defmodule Bankcursor.Users.User do
     import Ecto.Changeset
     alias Ecto.Changeset
 
+    @required_params_create [:name, :password, :email, :cep]
+    @required_params_update [:name, :email, :cep, :password]
 
     schema "users" do
         field :name, :string
         field :password, :string, virtual: true
-        field :password_hash, :string 
+        field :password_hash, :string
         field :email, :string
         field :cep, :string
 
         timestamps()
     end
 
+    def changeset(params) do
+        %__MODULE__{}
+        |> cast(params, @required_params_create)
+        |> validate_required( @required_params_create)
+        |> validate_length(:name, min: 3)
+        |> validate_format(:email, ~r/@/)
+        |> validate_length(:cep, is: 8)
+        |> add_password_hash()
+    end
 
-    def changeset(user \\ %__MODULE__{}, params) do
+    def changeset(user, params) do
         user
-        |> cast(params, [:name, :password, :email, :cep])
-        |> validate_required([:name, :password, :email, :cep])
+        |> cast(params,  @required_params_create)
+        |> validate_required(@required_params_update)
         |> validate_length(:name, min: 3)
         |> validate_format(:email, ~r/@/)
         |> validate_length(:cep, is: 8)
