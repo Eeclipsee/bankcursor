@@ -4,7 +4,7 @@ defmodule Bankcursor.Users.User do
     alias Ecto.Changeset
 
     @required_params_create [:name, :password, :email, :cep]
-    @required_params_update [:name, :email, :cep, :password]
+    @required_params_update [:name, :email, :cep]
 
     schema "users" do
         field :name, :string
@@ -33,7 +33,6 @@ defmodule Bankcursor.Users.User do
         |> validate_length(:name, min: 3)
         |> validate_format(:email, ~r/@/)
         |> validate_length(:cep, is: 8)
-        |> add_password_hash()
     end
 
     defp add_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset) do

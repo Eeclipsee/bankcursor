@@ -16,7 +16,7 @@ defmodule BankcursorWeb.UsersJSON do
             id: user.id,
             cep: user.cep,
             email: user.email,
-            name: user.name,
+            name: user.name,                                                                             k
         }
     end
 end
