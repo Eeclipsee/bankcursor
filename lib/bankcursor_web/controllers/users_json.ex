@@ -9,6 +9,7 @@ defmodule BankcursorWeb.UsersJSON do
     end
 
     def get(%{user: user}), do: %{data: data(user)}
+    def delete(%{user: user}), do: %{data: data(user)}
 
     def update(%{user: user}), do: %{message: "User Atualizado com Sucesso!", data: data(user)}
     defp data(%User{} = user) do
