@@ -17,7 +17,13 @@ defmodule BankcursorWeb.ErrorJSON do
   def error(%{changeset: :not_found}) do
     %{
       status: :not_found,
-      message: "User Not Found"
+      message: "Resource Not Found"
+    }
+  end
+
+  def error(%{status: status}) do
+    %{
+      status: status
     }
   end
 
