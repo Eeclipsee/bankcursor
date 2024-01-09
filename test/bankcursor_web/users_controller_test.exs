@@ -17,7 +17,7 @@ defmodule BankcursorWeb.UsersControllerTest do
         |> json_response(:created)
 
       assert %{
-                "data" => %{"cep" => "12345636", "email" => "teste@teste", "id" => _id, "name" => "João"},
+                "data" => %{"cep" => "12345636", "email" => "teste@teste", "id" => _id, "name" => "João",},
                 "message" => "User criado com sucesso"
               } = response
 
