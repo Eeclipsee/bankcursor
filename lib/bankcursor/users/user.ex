@@ -2,6 +2,7 @@ defmodule Bankcursor.Users.User do
     use Ecto.Schema
     import Ecto.Changeset
     alias Ecto.Changeset
+    alias Bankcursor.Accounts.Account
 
     @required_params_create [:name, :password, :email, :cep]
     @required_params_update [:name, :email, :cep]
@@ -12,6 +13,7 @@ defmodule Bankcursor.Users.User do
         field :password_hash, :string
         field :email, :string
         field :cep, :string
+        has_one :account, Account
 
         timestamps()
     end
@@ -41,5 +43,4 @@ defmodule Bankcursor.Users.User do
     end
 
     defp add_password_hash(changeset), do: changeset
-
 end
