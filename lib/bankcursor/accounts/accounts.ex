@@ -16,7 +16,7 @@ defmodule Bankcursor.Accounts.Account do
   def changeset(account \\%__MODULE__{}, params) do
     account
     |> cast(params, @required_params)
-    |> validade_required(@required_params)
+    |> validate_required(@required_params)
     |> check_constraint(:balance, name: :balance_must_be_positive)
   end
 
