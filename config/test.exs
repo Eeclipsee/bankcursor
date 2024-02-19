@@ -7,7 +7,7 @@ import Config
 # Run `mix help test` for more information.
 config :bankcursor, Bankcursor.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "qwe123",
   hostname: "localhost",
   database: "bankcursor_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,

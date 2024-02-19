@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :bankcursor, Bankcursor.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "qwe123",
   hostname: "localhost",
   database: "bankcursor_dev",
   stacktrace: true,
