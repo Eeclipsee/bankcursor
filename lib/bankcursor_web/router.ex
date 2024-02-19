@@ -9,7 +9,9 @@ defmodule BankcursorWeb.Router do
     pipe_through :api
 
     get "/", WelcomeController, :index
+
     resources "/users", UsersController, only: [:create, :update, :delete, :show]
+    post "/accounts", AccountsController, :create
   end
 
   if Application.compile_env(:bankcursor, :dev_routes) do
