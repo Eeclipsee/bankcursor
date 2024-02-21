@@ -7,7 +7,7 @@ defmodule Bankcursor.Accounts.Transaction do
 
   def call(from_account_id, to_account_id, value) do
     with %Account{} = from_account <- Repo.get(Account, from_account_id),
-         %Account{} = to_account <- Repo.get(Account, to_account_id)
+         %Account{} = to_account <- Repo.get(Account, to_account_id),
          {:ok, value} <- Decimal.cast(value) do
       Multi.new()
       |> withdraw(from_account, value)
