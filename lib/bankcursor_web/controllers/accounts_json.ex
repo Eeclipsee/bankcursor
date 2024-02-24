@@ -8,7 +8,7 @@ defmodule BankcursorWeb.AccountsJSON do
         }
     end
 
-    def transaction(%{transaction: %{witdraw: from_account, deposit: to_account}}) do
+    def transaction(%{transaction: %{withdraw: from_account, deposit: to_account}}) do
         %{
             message: "Transferencia Realizada!",
             from_account: data(from_account),
