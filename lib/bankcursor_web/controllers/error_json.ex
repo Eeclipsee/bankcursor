@@ -27,6 +27,10 @@ defmodule BankcursorWeb.ErrorJSON do
     }
   end
 
+    def error(%{message: message}) do
+    %{message: message}
+  end
+
 
 
   def error(%{changeset: changeset}) do
