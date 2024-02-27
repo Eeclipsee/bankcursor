@@ -22,11 +22,11 @@ defmodule BankcursorWeb.FallbackController do
         |> render(:error, changeset: changeset)
     end
 
-     def call(conn, {:error, msg}) do
+     def call(conn, {:errors, message}) do
         conn
         |> put_status(:bad_request)
         |> put_view(json: BankcursorWeb.ErrorJSON)
-        |> render(:error, message: msg)
+        |> render(:errors, message: message)
     end
 
 

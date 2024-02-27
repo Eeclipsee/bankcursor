@@ -35,5 +35,5 @@ defmodule Bankcursor.Accounts.Transaction do
   end
 
   defp handle_transaction({:ok, _result} = result), do: result
-  defp handle_transaction({:erorr, _op, reason, _}), do: {:error, reason}
+  defp handle_transaction({:erorrs, _op, reason, _}), do: {:errors, reason}
 end
