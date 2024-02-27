@@ -1,6 +1,6 @@
 defmodule BankcursorWeb.FallbackController do
     use BankcursorWeb, :controller
-    
+
     def call(conn, {:error, :not_found}) do
         conn
         |> put_status(:not_found)
@@ -22,11 +22,11 @@ defmodule BankcursorWeb.FallbackController do
         |> render(:error, changeset: changeset)
     end
 
-     def call(conn, {:errors, message}) do
+     def call(conn, {:error, message}) do
         conn
         |> put_status(:bad_request)
         |> put_view(json: BankcursorWeb.ErrorJSON)
-        |> render(:errors, message: message)
+        |> render(:error, message: message)
     end
 
 
