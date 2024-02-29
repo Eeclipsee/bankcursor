@@ -1,7 +1,6 @@
 defmodule BankcursorWeb.Token do
   alias Phoenix.Token
-  alias BankcursorWeb.Endpoint
-
+  alias BankcursosWeb.Endpoint
   @sign_salt "bankcursor_api"
 
   def sign(user) do
@@ -9,5 +8,4 @@ defmodule BankcursorWeb.Token do
   end
 
   def verify(token), do: Token.verify(Endpoint, @sign_salt, token)
-
 end
