@@ -7,6 +7,12 @@ defmodule BankcursorWeb.UsersJSON do
             data: data(user)
         }
     end
+    def login (%{token: token}) do
+        %{
+            message: "User Autenticado com Sucesso!",
+            bearer: token
+        }
+    end
 
     def get(%{user: user}), do: %{data: data(user)}
     def delete(%{user: user}), do: %{data: data(user)}

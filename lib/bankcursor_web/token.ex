@@ -1,6 +1,6 @@
 defmodule BankcursorWeb.Token do
   alias Phoenix.Token
-  alias BankcursosWeb.Endpoint
+  alias BankcursorWeb.Endpoint
   @sign_salt "bankcursor_api"
 
   def sign(user) do

@@ -4,6 +4,8 @@ defmodule BankcursorWeb.UsersController do
     alias Bankcursor.Users
     alias Users.User
 
+    alias BankcursorWeb.Token
+
     action_fallback BankcursorWeb.FallbackController
 
     def create(conn, params) do
@@ -35,6 +37,16 @@ defmodule BankcursorWeb.UsersController do
             conn
             |> put_status(:ok)
             |> render(:update, user: user)
+        end
+    end
+
+    def login(conn, params) do
+        with {:ok, %User{} = user} <- Users.login(params) do
+            token = Token.sign(user)
+            
+            conn
+            |> put_status(:ok)
+            |> render(:login, token: token)
         end
     end
 end
