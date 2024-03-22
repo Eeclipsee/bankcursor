@@ -19,4 +19,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Projeto Bankcursor.
 
-Com a orientação excelente do professor Rafael Camarda (https://www.linkedin.com/in/rafaelcamarda) Realizamos em aula um projeto com Phoenix para simular um crud de usuario, possibilitando a realização de criação de conta, bem como possibilidade de realizar transferência de valores entre contas, implementando uma autenticação via token Bearer, também estruturado com um banco de dado Postgres.
+Com a orientação excelente do professor Rafael Camarda (https://www.linkedin.com/in/rafaelcamarda) Realizamos em aula um projeto com Phoenix para simular um crud de usuario, possibilitando a realização de criação de conta, bem como possibilidade de realizar transferência de valores entre contas, implementando uma autenticação via token Bearer, criptografia de password. abrindo leque para implementar em outros campos, estruturado com um banco de dados Postgres. Todo realizado no padrão REST
