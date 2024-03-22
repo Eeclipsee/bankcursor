@@ -16,3 +16,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+## Projeto Bankcursor.
+
+Com a orientação excelente do professor Rafael Camarda (https://www.linkedin.com/in/rafaelcamarda) Realizamos em aula um projeto com Phoenix para simular um crud de usuario, possibilitando a realização de criação de conta, bem como possibilidade de realizar transferência de valores entre contas, implementando uma autenticação via token Bearer, também estruturado com um banco de dado Postgres.
